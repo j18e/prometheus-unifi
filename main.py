@@ -74,7 +74,7 @@ class Collector(object):
     def collect(self):
         start = datetime.now()
         metrics = {
-            'tx_bytes': CounterMetricFamily(
+            'tx_bytes': GaugeMetricFamily(
                 'unifi_client_tx_bytes',
                 'Count of bytes the Unifi client has transmitted (upload)',
                 labels=[
@@ -85,7 +85,7 @@ class Collector(object):
                     'network',
                 ]
             ),
-            'rx_bytes': CounterMetricFamily(
+            'rx_bytes': GaugeMetricFamily(
                 'unifi_client_rx_bytes',
                 'Count of bytes the Unifi client has received (download)',
                 labels=[
@@ -96,7 +96,7 @@ class Collector(object):
                     'network',
                 ]
             ),
-            'first_seen': CounterMetricFamily(
+            'first_seen': GaugeMetricFamily(
                 'unifi_client_first_seen',
                 'Time the Unifi controller first noticed a client',
                 labels=[
@@ -107,7 +107,7 @@ class Collector(object):
                     'network',
                 ]
             ),
-            'last_seen': CounterMetricFamily(
+            'last_seen': GaugeMetricFamily(
                 'unifi_client_last_seen',
                 'Time the Unifi controller last noticed a client',
                 labels=[
