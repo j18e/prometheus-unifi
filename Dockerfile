@@ -4,4 +4,4 @@ RUN pip install --upgrade docopt prometheus_client requests
 
 ADD main.py main.py
 
-CMD ./main.py
+ENTRYPOINT ["python3", "-u", "main.py"]
